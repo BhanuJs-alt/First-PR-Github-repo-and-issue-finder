@@ -1,16 +1,34 @@
-# React + Vite
+🚀 First-PR an Open Source/Issue finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📖 Project Overview
+The Open Source Finder is a React-based web application designed to lower the barrier to entry for open-source contributors. Instead of mindlessly scrolling through GitHub, users can select their preferred domain (e.g., Web Development, Machine Learning) and programming language. The app fetches relevant, active repositories and specifically filters for beginner-friendly issues (like "good first issue" or "help wanted") so developers can make their first pull request with confidence.
 
-Currently, two official plugins are available:
+🛠️ Tech Stack & Architecture
+Frontend Framework: React 19 (via Vite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Styling: CSS (Custom components)
 
-## React Compiler
+Data Fetching: GitHub REST API v3
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Architecture Pattern: Separation of Concerns (Custom Hooks for logic, Components for UI)
 
-## Expanding the ESLint configuration
+✨ Key Features
+1. Smart Issue Filtering: Goes beyond the standard "good first issue" by simultaneously checking for multiple inclusive labels like "help wanted", "beginner friendly", and "first-timers-only".
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Rate Limit Protection: Integrates a GitHub Personal Access Token (PAT) via environment variables to increase the API limit from 60 requests/hour to 5,000 requests/hour.
+
+3. Optimized State Management: Uses a custom React hook (useGitHubSearch) to abstract complex asynchronous data fetching, loading states, and error handling away from the UI layer.
+
+📁 Folder Structure
+
+src/
+├── components/
+│   ├── RepoCard.jsx    # Displays individual repo stats and fetches/displays its issues
+│   ├── RepoList.jsx    # Maps over the repo data to render a grid/list of RepoCards
+│   └── SearchBar.jsx   # Captures user input (domain/language)
+├── hooks/
+│   └── useGitHubSearch.js # Custom hook managing search logic, loading, and error states
+├── services/
+│   └── githubService.js   # Centralized API calls (fetchRepos, fetchIssues)
+├── App.jsx             # Main container tying the UI and Hooks together
+└── main.jsx            # React entry point
