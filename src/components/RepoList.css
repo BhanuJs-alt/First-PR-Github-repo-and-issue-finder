@@ -1,0 +1,7 @@
+.repo-list {
+  display: grid;
+  /* This creates a responsive grid: cards will be at least 320px wide, 
+     and will stretch to fill the space if there's room */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
