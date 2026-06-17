@@ -1,6 +1,6 @@
 🚀 First-PR an Open Source/Issue finder
 
-    live demo-https://first-pr-github-repo-and-issue-find.vercel.app/
+**[🔴 Live Demo: Try the Open Source Finder Here!](https://first-pr-github-repo-and-issue-find.vercel.app/)**
 
 📖 Project Overview
 The Open Source Finder is a React-based web application designed to lower the barrier to entry for open-source contributors. Instead of mindlessly scrolling through GitHub, users can select their preferred domain (e.g., Web Development, Machine Learning) and programming language. The app fetches relevant, active repositories and specifically filters for beginner-friendly issues (like "good first issue" or "help wanted") so developers can make their first pull request with confidence.
